@@ -1,5 +1,5 @@
 {-|
-    Module      :  Data.Html.Download
+    Module      :  Text.HTML.Download
     Copyright   :  (c) Neil Mitchell 2006-2007
     License     :  BSD-style
 
@@ -17,7 +17,7 @@
     <http://thread.gmane.org/gmane.comp.lang.haskell.cafe/18443/>
 -}
 
-module Data.Html.Download(openURL) where
+module Text.HTML.Download(openURL) where
 
 import System.IO
 import Network

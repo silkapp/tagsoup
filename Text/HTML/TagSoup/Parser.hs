@@ -1,4 +1,4 @@
-module Data.Html.TagSoup.Parser (
+module Text.HTML.TagSoup.Parser (
    Parser, Status(Status),
    char, dropSpaces, eof, force, getPos,
    many, many1, many1Satisfy, manySatisfy, readUntil,

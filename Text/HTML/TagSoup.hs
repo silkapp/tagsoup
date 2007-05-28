@@ -1,5 +1,5 @@
 {-|
-    Module      :  Data.Html.TagSoup
+    Module      :  Text.HTML.TagSoup
     Copyright   :  (c) Neil Mitchell 2006-2007
     License     :  BSD-style
 
@@ -16,10 +16,9 @@
     then operate upon it to extract the necessary information.
 -}
 
-module Data.Html.TagSoup(
+module Text.HTML.TagSoup(
     -- * Data structures and parsing
     Tag(..), PosTag, Attribute, parseTags, parseTagsNoPos,
-    module Data.Html.Download,
 
     -- * Tag Combinators
     (~==), (~/=),
@@ -36,19 +35,17 @@ module Data.Html.TagSoup(
     propSections, propPartitions,
     ) where
 
-import Data.Html.TagSoup.Parser
+import Text.HTML.TagSoup.Parser
    (char, dropSpaces, eof, force, getPos,
     many, many1, many1Satisfy, manySatisfy, readUntil,
     satisfy, source, string,
     emit, mfix, gets)
 
-import qualified Data.Html.TagSoup.Parser as Parser
+import qualified Text.HTML.TagSoup.Parser as Parser
 
 import Text.ParserCombinators.Parsec.Pos (SourcePos)
 
 import Control.Monad.RWS (mplus, msum, when)
-
-import Data.Html.Download
 
 import Data.Char
 import Data.List

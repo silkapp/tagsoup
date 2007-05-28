@@ -1,9 +1,9 @@
-module Data.Html.TagSoup.Test where
+module Text.HTML.TagSoup.Test where
 
-import qualified Data.Html.TagSoup as TagSoup
+import qualified Text.HTML.TagSoup as TagSoup
 
 {-
-*Data.Html.TagSoup> mapM print $ parseTags $ "</html " ++ cycle " abc=a_b&c"
+*Text.HTML.TagSoup> mapM print $ parseTags $ "</html " ++ cycle " abc=a_b&c"
 ("anonymous input" (line 1, column 1),TagClose "html")
 ("anonymous input" (line 1, column 9),TagWarning "Junk in closing tag: \"abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a_b&c abc=a
 -}
