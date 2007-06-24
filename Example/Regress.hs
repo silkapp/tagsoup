@@ -1,4 +1,4 @@
-module Text.HTML.TagSoup.Test (
+module Example.Regress (
     -- * Tests on laziness
     laziness, lazyTags, lazyWarnings,
 
