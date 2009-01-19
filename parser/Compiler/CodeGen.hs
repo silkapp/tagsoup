@@ -1,7 +1,7 @@
 
-module CodeGen where
+module Compiler.CodeGen where
 
-import Type
+import Compiler.Type
 import Data.List
 import Data.Char
 

@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 
-module Type where
+module Compiler.Type where
 
 import Data.Data
 import Data.List

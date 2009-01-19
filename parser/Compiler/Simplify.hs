@@ -1,8 +1,8 @@
 
-module Simplify where
+module Compiler.Simplify where
 
 import Data.Generics.PlateData
-import Type
+import Compiler.Type
 import Data.List
 import Data.Maybe
 

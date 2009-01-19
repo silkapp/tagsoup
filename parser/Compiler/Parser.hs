@@ -1,7 +1,7 @@
 
-module Parser(parse) where
+module Compiler.Parser(parse) where
 
-import Type
+import Compiler.Type
 import Data.List
 import Data.Char
 
