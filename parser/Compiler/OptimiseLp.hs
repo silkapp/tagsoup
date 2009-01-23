@@ -1,12 +1,12 @@
 
-module Compiler.Optimise where
+module Compiler.OptimiseLp(optimiseLp) where
 
-import Compiler.Type2
+import Compiler.Lp
 import Compiler.Util
 
 
-optimise :: Program -> Program
-optimise = collapsePrimArgs . deadCode . specialise
+optimiseLp :: Program -> Program
+optimiseLp = collapsePrimArgs . deadCode . specialise
 
 
 

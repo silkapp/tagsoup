@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 
-module Compiler.Type2 where
+module Compiler.Lp where
 
 import Data.Data
 import Compiler.Util
@@ -34,7 +34,7 @@ data Exp = Prim {expName :: String  , expArgs :: [Exp]}
            deriving (Eq,Ord,Typeable,Data)
 
 data Pat = PVar RuleArg
-         | PLit String
+         | PLit {fromPLit :: String}
          | PPrim String
          | PWildcard
            deriving (Eq,Ord,Typeable,Data)
