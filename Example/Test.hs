@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -fno-warn-deprecations #-}
 
-module Example.Regress (regress) where
+module Example.Test(test) where
 
 import Text.HTML.TagSoup
 import Text.HTML.TagSoup.Render
@@ -26,8 +26,8 @@ a === b = if a == b then pass else fail $ "Does not equal: " ++ show a ++ " =/= 
 
 -- * The Main section
 
-regress :: IO ()
-regress = print $ do
+test :: IO ()
+test = print $ do
     parseTests
     renderTests
     combiTests
