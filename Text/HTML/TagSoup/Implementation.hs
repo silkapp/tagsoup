@@ -1,5 +1,5 @@
 
-module Implementation where
+module Text.HTML.TagSoup.Implementation where
 
 import Data.List
 

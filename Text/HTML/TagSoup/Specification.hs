@@ -1,8 +1,8 @@
 {-# LANGUAGE RecordWildCards, PatternGuards #-}
 
-module Spec(parse) where
+module Text.HTML.TagSoup.Specification(parse) where
 
-import Implementation
+import Text.HTML.TagSoup.Implementation
 import Data.Char
 
 
