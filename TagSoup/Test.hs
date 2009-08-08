@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -fno-warn-deprecations #-}
 
-module Example.Test(test) where
+module TagSoup.Test(test) where
 
 import Text.HTML.TagSoup
 import Text.HTML.TagSoup.Render

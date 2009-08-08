@@ -1,5 +1,5 @@
 
-module Example.Benchmark where
+module TagSoup.Benchmark where
 
 import Text.HTML.TagSoup
 import Text.StringLike(StringLike)

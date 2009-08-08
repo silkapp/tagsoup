@@ -1,5 +1,5 @@
 
-module Example.Example where
+module TagSoup.Sample where
 
 import Text.HTML.TagSoup
 import Text.HTML.Download
