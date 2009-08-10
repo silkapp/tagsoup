@@ -1,5 +1,5 @@
 
-module TagSoup.Generate(generate) where
+module TagSoup.Generate.All(generate) where
 
 import Language.Haskell.Exts
 
