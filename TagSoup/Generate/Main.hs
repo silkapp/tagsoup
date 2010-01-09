@@ -1,19 +1,19 @@
 
-module TagSoup.Generate.All(generate) where
+module Main(main) where
 
 import Control.Monad
 import Data.List
 import Data.Generics.PlateData
 
-import TagSoup.Generate.HSE
-import TagSoup.Generate.Type
-import TagSoup.Generate.Convert
-import qualified TagSoup.Generate.Desugar as Desugar
-import TagSoup.Generate.Supercompile
+import HSE
+import Type
+import Convert
+import qualified Desugar
+import Supercompile
 
 
-generate :: IO ()
-generate = do
+main :: IO ()
+main = do
     let parse x = fmap fromParseResult $ parseFileWithMode mode x
         mode = defaultParseMode{fixities=infixr_ 5 ["&"] ++ baseFixities}
     spec <- parse "Text/HTML/TagSoup/Specification.hs"
