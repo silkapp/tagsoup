@@ -1,5 +1,5 @@
 
-module Main(main) where
+module Translate(translate) where
 
 import Control.Monad
 import Data.List
@@ -12,14 +12,14 @@ import qualified Desugar
 import Supercompile
 
 
-main :: IO ()
-main = do
+translate :: IO ()
+translate = do
     let parse x = fmap fromParseResult $ parseFileWithMode mode x
         mode = defaultParseMode{fixities=infixr_ 5 ["&"] ++ baseFixities}
     spec <- parse "Text/HTML/TagSoup/Specification.hs"
     impl <- parse "Text/HTML/TagSoup/Implementation.hs"
-    putStrLn "Optimising... "
-    writeFile "Text/HTML/TagSoup/Generated.hs" $ optimise $ mergeModules spec impl
+    putStrLn "Translating... "
+    writeFile "TagSoup/Generate/programs/TagSoup.hs" $ regen $ mergeModules spec impl
     putStrLn "done"
 
 
@@ -34,6 +34,7 @@ showMode [pos,warn,merge] = f pos "Pos" ++ f warn "Warn" ++ f merge "Merge"
     where f b s = if b then s else ""
 
 
+{-
 optimise :: Module -> String
 optimise (Module x1 x2 x3 x4 x5 x6 x7) = unlines $
     ["{-# LANGUAGE RecordWildCards, PatternGuards, ScopedTypeVariables #-}"
@@ -71,6 +72,13 @@ optimise (Module x1 x2 x3 x4 x5 x6 x7) = unlines $
         | t <- types, m <- modes, let [pb,wb,mb] = map show m]
     where
         (decls,typedefs) = partition isDecl $ desugar $ prelude ++ x7
+-}
+
+regen :: Module -> String
+regen (Module x1 x2 x3 x4 x5 x6 x7) = unlines $ concatMap (lines . prettyPrint) $ output $ input $ mainFunc t m : decls
+    where (decls,typedefs) = partition isDecl $ desugar $ prelude ++ x7
+          t = head types
+          m = head modes
 
 
 mainFunc t [a,b,c] = fromParseResult $ parse $
