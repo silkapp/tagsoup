@@ -24,6 +24,7 @@ data RenderOptions str = RenderOptions
     {optEscape :: str -> str        -- ^ Escape a piece of text (default = escape the four characters @&\"\<\>@)
     ,optMinimize :: str -> Bool     -- ^ Minimise \<b\>\<\/b\> -> \<b/\> (default = minimise only @\<br\>@ tags)
     ,optRawTag :: str -> Bool      -- ^ Should a tag be output with no escaping (default = true only for @script@)
+    ,optEmptyAttr :: Bool      -- ^ Allow attributes without any value. (default = true, set to false for XML)
     }
 
 
@@ -36,7 +37,7 @@ escapeHTML = fromString . concatMap esc1 . toString
 
 -- | The default render options value, described in 'RenderOptions'.
 renderOptions :: StringLike str => RenderOptions str
-renderOptions = RenderOptions escapeHTML (\x -> toString x == "br") (\x -> toString x == "script")
+renderOptions = RenderOptions escapeHTML (\x -> toString x == "br") (\x -> toString x == "script") True
 
 
 -- | Show a list of tags, as they might have been parsed, using the default settings given in
