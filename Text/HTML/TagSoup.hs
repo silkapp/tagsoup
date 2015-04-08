@@ -32,7 +32,7 @@ module Text.HTML.TagSoup(
 
     -- * Utility
     sections, partitions,
-    
+
     -- * Combinators
     TagRep(..), (~==),(~/=)
     ) where
@@ -41,7 +41,7 @@ import Text.HTML.TagSoup.Type
 import Text.HTML.TagSoup.Parser
 import Text.HTML.TagSoup.Render
 import Data.Char
-import Data.List
+import Data.List hiding (uncons)
 import Text.StringLike
 
 
